@@ -3,6 +3,7 @@ const User = require("../models/user");
 const mongoose = require("mongoose");
 const Product = require("../models/product");
 const EmailOrderStatus = require("../EmailOrderStatus");
+const EmailCancelOrder = require("../EmailCancelOrder");
 exports.getAllOrders = async (req, res) => {
     try {
         const orders = await Order.find();
@@ -139,6 +140,8 @@ exports.cancelOrder = async (req, res) => {
                 if (err) {
                     console.log(err);
                 } else if (result) {
+                    EmailCancelOrder(req.body.ownerEmail);
+
                     console.log(result);
                 }
             }
