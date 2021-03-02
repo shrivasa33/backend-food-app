@@ -5,7 +5,7 @@ const app = require('./app')
 const PORT = process.env.PORT || 8000
 app.listen(PORT, () => console.log(`Listening on ${PORT}`))
 
-const dbpath = "mongodb+srv://tayyabjamil:tayyabjamil123@cluster0.wzfwv.mongodb.net/shirivasFoods";
+const dbpath = "mongodb+srv://shrivasafoods-testing:Shrivasafoods123@cluster0.ejnsh.mongodb.net/test";
 const conn = mongoose.createConnection(dbpath);
 
 // Init gfs
