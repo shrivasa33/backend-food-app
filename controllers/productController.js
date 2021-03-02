@@ -182,7 +182,7 @@ exports.postProducts =   async (req,res)=>{
     exports.featuredProducts = async(req,res)=>{
         try {
     const featuredProducts = await Product.find().sort( { productOrders : 1 } )
-        .limit(8).select('-__v')    
+        .limit(12).select('-__v')    
     res.status(201).send(featuredProducts) 
         } catch (error) {
             res.status(404).json({
