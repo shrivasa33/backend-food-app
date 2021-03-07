@@ -4,7 +4,7 @@ const EmailAccountConfirm = require("../EmailAccountConfirm");
 const bcrypt = require("bcrypt");
 exports.signUp = async (req, res) => {
   try {
-    const alreadyUser = await User.find({ email: req.body.email });
+    const alreadyUser = await User.find({ email: req.body.email.toLowerCase() });
 
     if (alreadyUser.length > 0) {
       return res.status(404).json({
